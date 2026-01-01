@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.11.9 on win32)" generated="2026-01-01T22:06:59.832763" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab4 1 2" source="C:\SE_Automation_663380231-4\TestAutomationLab_663380231-4\Test_labAutomation1-2\lab4_1_2.robot">
+<test id="s1-t1" name="TC_01_2 Register Success" line="11">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-01T22:06:59.991315" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020291ABA5D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-01T22:06:59.990325" elapsed="0.000990"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-01T22:06:59.991315" level="INFO">${options.binary_location} = C:/ChromeForTesting/chrome-win64/chrome-win64/chrome.exe</msg>
+<var>${options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-01T22:06:59.991315" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-01T22:06:59.992315" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000020291A97250&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-01T22:06:59.991315" elapsed="0.001000"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:06:59.992315" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-01T22:06:59.992315" elapsed="1.111288"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${delay}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-01T22:07:01.103603" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:07:01.105107" level="INFO">Opening url 'http://localhost:7272/TestAutomationLab_663380231-4/StarterFiles/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-01T22:07:01.105107" elapsed="5.077029"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:07:06.182639" level="INFO">Typing text 'Somyod' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Somyod</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T22:07:06.182136" elapsed="15.054844"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:07:21.236980" level="INFO">Typing text 'Sodsai' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sodsai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T22:07:21.236980" elapsed="15.059147"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:07:36.297403" level="INFO">Typing text 'CS KKU' into text field 'id=organization'.</msg>
+<arg>id=organization</arg>
+<arg>CS KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T22:07:36.296127" elapsed="15.051097"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:07:51.347224" level="INFO">Typing text 'somyod@kkumail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>somyod@kkumail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T22:07:51.347224" elapsed="15.046302"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T22:08:06.393526" level="INFO">Typing text '091-001-1234' into text field 'id=phone'.</msg>
+<msg time="2026-01-01T22:08:16.485251" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-01T22:08:16.485251" level="FAIL">Element with locator 'id=phone' not found.</msg>
+<arg>id=phone</arg>
+<arg>091-001-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-01-01T22:08:06.393526" elapsed="10.120356">Element with locator 'id=phone' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=registerButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-01T22:08:16.513882" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2026-01-01T22:08:16.514875" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Thank you for registering with us.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-01-01T22:08:16.514875" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>We will send a confirmation to your email soon.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-01-01T22:08:16.514875" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-01T22:08:16.514875" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-01-01T22:06:59.990325" elapsed="76.524550">Element with locator 'id=phone' not found.</status>
+</test>
+<status status="FAIL" start="2026-01-01T22:06:59.833766" elapsed="76.682356"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Lab4 1 2" id="s1" pass="0" fail="1" skip="0">Lab4 1 2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
